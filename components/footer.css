@@ -1,0 +1,10 @@
+footer {
+  background-color: var(--bg-alt);
+  color: var(--on-bg-alt);
+  position: relative;
+  bottom: 0;
+
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,34 @@
+header {
+  background-color: var(--bg-alt);
+  color: var(--on-bg-alt);
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+  padding: 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2em;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    li {
+      list-style-type: none;
+      display: inline;
+
+      a,
+      a:visited,
+      a:hover,
+      a:active {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

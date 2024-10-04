@@ -1,0 +1,15 @@
+:root {
+  /* Base colors */
+  --bg: #fefefe;
+  --bg-alt: #1f2936;
+  --border: #293746;
+  --primary: #3782f5;
+  --tinted: #cccccc77;
+
+  /* on-colors (inspired by Flutter) */
+  --on-bg: var(--bg-alt);
+  --on-bg-alt: var(--bg);
+  --on-primary: var(--on-bg-alt);
+
+  --font: "Roboto", sans-serif;
+}

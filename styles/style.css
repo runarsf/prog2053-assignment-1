@@ -1,0 +1,248 @@
+@import url("reset.css");
+@import url("fonts.css");
+@import url("variables.css");
+
+body,
+html {
+  background-color: var(--bg);
+  color: var(--on-bg);
+  font-family: var(--font);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  min-height: calc(100vh - 150px);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: bold;
+  padding: 5px 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+.banner {
+  background-color: var(--bg-alt);
+  color: var(--on-bg-alt);
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  line-height: 1.25;
+  padding: 5em 15%;
+  width: 100%;
+
+  > * {
+    flex: 1;
+  }
+
+  p {
+    padding: 20px 0;
+  }
+
+  img::before {
+    background-color: var(--tinted);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2em 13% 5em 13%;
+  gap: 5em;
+  max-width: 50%;
+
+  div {
+    display: flex;
+    gap: 2em;
+
+    p {
+      flex: 3;
+      padding-bottom: 2em;
+    }
+
+    img {
+      flex: 2;
+      border: 5px solid var(--primary);
+      border-radius: 10px;
+      max-width: 20em;
+      min-height: 10em;
+    }
+  }
+}
+
+.quote {
+  background-color: var(--tinted);
+  color: var(--on-bg);
+  padding: 7em 11em;
+  width: 100%;
+
+  p:not(.author) {
+    font-size: 1.4em;
+    font-style: italic;
+    text-shadow: 0px 0px 7px #00000088;
+  }
+
+  .author {
+    float: right;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+.callout {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5em;
+
+  border-radius: 10px;
+  margin: 70px auto;
+  padding: 50px 150px;
+
+  button {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border-radius: 7px;
+    padding: 3px 23px;
+    border: 2px solid var(--on-primary);
+  }
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  *:not(p)::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+#posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 1em;
+
+  .card {
+    align-self: flex-start;
+  }
+}
+
+#weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+
+  #forecast {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 2em;
+
+    .card {
+      padding: 0;
+
+      .metrics {
+        display: grid;
+        grid-template-areas:
+          "start"
+          "center"
+          "end";
+        padding: 1em;
+
+        .start {
+          grid-area: start;
+          align-self: start;
+          justify-self: start;
+
+          p:first-child {
+            font-size: 0.8em;
+          }
+          p:last-child {
+            font-size: 1.2em;
+            font-weight: bold;
+          }
+        }
+
+        .center {
+          grid-area: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding-bottom: 1.5em;
+
+          h5 {
+            color: #666;
+          }
+        }
+
+        .end {
+          grid-area: end;
+          align-self: end;
+          justify-self: start;
+          padding-left: 0;
+          width: 100%;
+
+          li {
+            list-style-type: none;
+            display: block;
+            white-space: nowrap;
+
+            * {
+              font-size: 1em;
+            }
+
+            > span:first-child {
+              color: #666;
+            }
+
+            > span:last-child {
+              padding-left: 1em;
+              float: right;
+            }
+          }
+        }
+      }
+
+      .time {
+        border-top: 1px dashed #999;
+        font-size: 0.8em;
+        text-align: right;
+
+        code {
+          margin: 0.5em;
+          color: #666;
+          float: right;
+        }
+      }
+    }
+  }
+}
